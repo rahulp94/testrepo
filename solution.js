@@ -33,7 +33,7 @@ fs.readdir(originalFilePath,(err,files) => {
                 var editedFileName = file.substr(0,pos) + "_edited_"+newDate+extensionText;
                 fs.appendFile(originalFilePath + file, '\n' + file + '\n' + originalFilePath + '\n' + editedFileName + '\n' + newFilePath, function (err) {
                     if (err) throw err;
-                    //console.log('Saved!');
+                    //console.log('Save!');
                 });
                 fs.rename(originalFilePath + file, newFilePath + editedFileName, function (err) {
                     if (err) throw err
